@@ -1,0 +1,515 @@
+.main {
+    height: 50px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 5px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 0px 20px;
+    position: relative;
+}
+
+.more-icons {
+    display: flex;
+    width: 240px;
+    margin-right: 20px;
+    font-size: 28px;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 200;
+}
+
+.bg-Post {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0px;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container {
+    width: 480px;
+    height: 250px;
+    background-color: white;
+    border-radius: 15px;
+    position: fixed;
+    opacity: 1;
+    animation: Post 0.1s ease-in-out 1;
+    overflow: hidden;
+}
+
+@keyframes Post {
+    0% {
+        transform: scale(1.3, 1.3);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.container button {
+    border: none;
+    background-color: inherit;
+    font-size: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 8px);
+    height: 40px;
+    width: 80%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 153, 255, 0.9);
+}
+
+.container h1 {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 10px;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.container .cross {
+    display: flex;
+    align-items: center;
+    right: 20px;
+    border: 2px solid rgb(165, 165, 165);
+    position: absolute;
+    border-radius: 5px;
+    top: 10px;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.container input[type=file] {
+    border: 2px dashed rgb(150, 150, 150);
+    width: 300px;
+    position: relative;
+    border-radius: 5px;
+    height: 80px;
+    left: 80px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=file]::after {
+    display: block;
+    content: "Drag & Drop";
+    font-size: 30px;
+    color: rgba(180, 180, 180, 0.74);
+    text-align: center;
+}
+
+ ::-webkit-file-upload-button {
+    border: none;
+    background-color: inherit;
+    position: relative;
+    display: inline;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: rgba(0, 153, 255, 0.9);
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+}
+
+.container input[type=text] {
+    width: 300px;
+    position: relative;
+    left: 80px;
+    display: block;
+    height: 40px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 0px;
+    border-bottom: 2px solid black;
+}
+
+input::placeholder {
+    color: rgba(202, 202, 202, 0.74);
+    text-align: center;
+}
+
+.single {
+    position: relative;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+
+.home::after {
+    content: "Home";
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0px 4px;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+    transform: translate(-32px, 30px);
+    opacity: 0;
+    animation: moremovehome 0.2s ease-in-out 1;
+}
+
+.home:hover::after {
+    display: inline;
+    opacity: 1;
+}
+
+@keyframes moremovehome {
+    0% {
+        transform: translate(-32px, 10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-32px, 30px);
+        opacity: 1;
+    }
+}
+
+.messages::after {
+    content: "Messages";
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0px 4px;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+    transform: translate(-44px, 30px);
+    opacity: 0;
+    animation: moremovemes 0.2s ease-in-out 1;
+}
+
+.messages:hover::after {
+    display: inline;
+    opacity: 1;
+}
+
+@keyframes moremovemes {
+    0% {
+        transform: translate(-44px, 10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-44px, 30px);
+        opacity: 1;
+    }
+}
+
+.addpost::after {
+    content: "Post";
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0px 4px;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+    transform: translate(-29px, 30px);
+    opacity: 0;
+    animation: moremovepo 0.2s ease-in-out 1;
+}
+
+.addpost:hover::after {
+    display: inline;
+    opacity: 1;
+}
+
+@keyframes moremovepo {
+    0% {
+        transform: translate(-29px, 10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-29px, 30px);
+        opacity: 1;
+    }
+}
+
+.like::after {
+    content: "Activity";
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0px 4px;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+    transform: translate(-36px, 30px);
+    opacity: 0;
+    animation: moremovelike 0.2s ease-in-out 1;
+}
+
+.like:hover::after {
+    display: inline;
+    opacity: 1;
+}
+
+@keyframes moremovelike {
+    0% {
+        transform: translate(-36px, 10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-36px, 30px);
+        opacity: 1;
+    }
+}
+
+.profile::after {
+    content: "Profile";
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0px 4px;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+    transform: translate(-36px, 30px);
+    opacity: 0;
+    animation: moremoveprofile 0.2s ease-in-out 1;
+}
+
+.profile:hover::after {
+    display: inline;
+    opacity: 1;
+}
+
+@keyframes moremoveprofile {
+    0% {
+        transform: translate(-36px, 10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-36px, 30px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        overflow-x: hidden;
+    }
+    .App {
+        margin-bottom: 60px;
+    }
+    .icon {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .container {
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        bottom: 0px;
+        border-radius: 6px 6px 0px 0px;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        opacity: 1;
+        animation: Post 0.2s linear 1;
+        overflow: unset;
+    }
+    @keyframes Post {
+        0% {
+            height: 0px;
+            opacity: 0;
+            transform: scale(0.8, 0.8);
+        }
+        100% {
+            height: 300px;
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+    .container h1 {
+        margin-top: 5px;
+        font-size: 25px;
+    }
+    .container button {
+        font-weight: bold;
+        width: 90%;
+        border-radius: 10px;
+        position: fixed;
+        display: flex;
+        bottom: 0px;
+        justify-content: space-around;
+        align-items: center;
+        bottom: 30px;
+        cursor: pointer;
+    }
+    .container input[type=file] {
+        border: 2px dashed rgb(150, 150, 150);
+        width: 70%;
+        position: absolute;
+        border-radius: 5px;
+        height: 80px;
+        top: 60px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+     ::-webkit-file-upload-button {
+        border: none;
+        background-color: inherit;
+        position: absolute;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        border-radius: 6px;
+        background-color: rgba(0, 153, 255, 0.9);
+        left: 50%;
+        top: 83%;
+        transform: translate(-50%, -50%);
+    }
+    .container input[type=text] {
+        width: 70%;
+        position: absolute;
+        display: block;
+        height: 40px;
+        top: 170px;
+    }
+    .navbar {
+        display: flex;
+        z-index: 30;
+    }
+    .more-icons {
+        display: flex;
+        position: fixed;
+        height: 45px;
+        width: 100%;
+        bottom: 0px;
+        background-color: white;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgb(197, 197, 197);
+    }
+    .single {
+        position: relative;
+        font-size: 30px;
+        display: flex;
+        padding: 0px 20px;
+    }
+    .profile::after {
+        transform: translate(-8px, -15px);
+    }
+    @keyframes moremoveprofile {
+        0% {
+            transform: translate(-8px, 0px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-8px, -15px);
+            opacity: 1;
+        }
+    }
+    .home::after {
+        transform: translate(-5px, -15px);
+    }
+    .home:hover::after {
+        display: inline;
+        opacity: 1;
+    }
+    @keyframes moremovehome {
+        0% {
+            transform: translate(-5px, 0px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-5px, -15px);
+            opacity: 1;
+        }
+    }
+    .messages::after {
+        transform: translate(-16px, -15px);
+    }
+    @keyframes moremovemes {
+        0% {
+            transform: translate(-16px, 0px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-16px, -15px);
+            opacity: 1;
+        }
+    }
+    .like::after {
+        transform: translate(-10px, -15px);
+    }
+    @keyframes moremovelike {
+        0% {
+            transform: translate(-10px, 0px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-10px, -15px);
+            opacity: 1;
+        }
+    }
+    .addpost::after {
+        transform: translate(0px, -15px);
+    }
+    @keyframes moremovepo {
+        0% {
+            transform: translate(0px, 0px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(0px, -15px);
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .icon {
+        margin-left: 20px;
+    }
+    .more-icons {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .navbar {
+        width: 650px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .main {
+        display: flex;
+        justify-content: space-around;
+    }
+}
