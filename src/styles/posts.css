@@ -137,8 +137,17 @@
     padding: 0px;
 }
 
+.prevcom {
+    margin-top: 10px;
+}
+
 .comments {
-    margin: 10px 10px;
+    margin: 5px 10px;
+}
+
+.comments span {
+    font-weight: 500;
+    font-family: sans-serif;
 }
 
 .comments p {

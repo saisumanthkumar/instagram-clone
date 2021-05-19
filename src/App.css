@@ -154,7 +154,8 @@ input[type=file]::after {
 
 input::placeholder {
     color: rgba(202, 202, 202, 0.74);
-    text-align: center;
+    text-align: left;
+    padding-left: 5px;
 }
 
 .single {
@@ -380,6 +381,7 @@ input::placeholder {
         display: flex;
         justify-content: center;
         cursor: pointer;
+        left: 15%;
     }
      ::-webkit-file-upload-button {
         border: none;
@@ -400,6 +402,7 @@ input::placeholder {
         display: block;
         height: 40px;
         top: 170px;
+        left: 15%;
     }
     .navbar {
         display: flex;

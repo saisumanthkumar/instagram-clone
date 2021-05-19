@@ -9,11 +9,10 @@ import {FiSave} from 'react-icons/fi';
 import {BsThreeDots} from 'react-icons/bs';
 import {HiOutlineEmojiHappy} from 'react-icons/hi';
 
-function Posts() {
-    const [likes, setlikes] = useState(0);
+function Posts({item}) {
     const [clicks, setclicks] = useState(0);
     const [addCom, setaddCom] = useState('')
-    const [comment, setcomment] = useState(["Hello guys,Let's learn React today. 🚀"])
+    const [comment, setcomment] = useState([])
     const [iscom, setiscom] = useState(false)
     const [moreOptions, setmoreOptions] = useState(false)
     
@@ -31,11 +30,11 @@ function Posts() {
 
     const likeData =() => {
         if(clicks === 0){
-            setlikes(likes+1)
+            {item.likes += 1}
             setclicks(1)
         }
         else{
-            setlikes(likes-1)
+            {item.likes -= 1}
             setclicks(0)
         }
     }
@@ -47,16 +46,16 @@ function Posts() {
     return (
         <div className="post">
             <div className="avatar">
-                    <Avatar>S</Avatar>
+                    <Avatar>{item.username[0]}</Avatar>
                 <div className="username">
-                    <strong>sai_sumanth_951</strong>
+                    <strong>{item.username}</strong>
                     <div className="right">
                     <button onClick={dots}><BsThreeDots /></button>
                     </div>
                 </div>
             </div>
             <div className="image">
-                <img src={img} alt="" />
+                <img src={item.imgUrl} alt="Post Image" />
             </div>
             <div className="lcs">
                 <button onClick={likeData}><AiOutlineLike /></button>
@@ -67,11 +66,14 @@ function Posts() {
                 </div>   
             </div>
             <div className="likes">
-               <strong><em>{likes} likes</em></strong>
+               <strong><em>{item.likes} likes</em></strong>
             </div>
             <div className="comments">
-             {comment.map((item,index) => {return <p key={index}><strong>sai_sumanth_951</strong>  {item}</p> } )}
+            <span>{item.caption}</span>
+            <div className="prevcom">{item.comments.map((item) => <p key={item.msg}><strong>{item.user}  </strong> {item.msg}</p>)}</div>
+             {comment.map((item,index) => {return <p key={index}><strong>sai_sumanth_951 </strong>  {item}</p> } )}
             </div>
+            
             {iscom && <div className="addComment">
                 <HiOutlineEmojiHappy />
                 <input type="text" onChange={handleComment} placeholder="Add a comment..." value={addCom}/>

@@ -1,12 +1,13 @@
-import Posts from './components/Posts';
+import Home from './components/Home';
 import './App.css';
 import {CgAddR,CgProfile} from 'react-icons/cg';
 import {AiOutlineMessage,AiOutlineHeart} from 'react-icons/ai';
 import {BiHomeAlt} from 'react-icons/bi';
 import {ImCross} from 'react-icons/im';
+import  {data}  from './data/Data';
 import { useState } from 'react';
 function App() {
-  const [addpPost, setaddpPost] = useState(false)
+  const [addpPost, setaddpPost] = useState(false);
   return (
     <div className="App">
       <div className="main">
@@ -24,13 +25,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="post-container">
-        <Posts />
-        <Posts />
-        <Posts />
-      
-      </div>
-
+      <Home data ={data}/>
       {addpPost && <div className="addPost">
         <div className="bg-Post">
         <div className="container">
