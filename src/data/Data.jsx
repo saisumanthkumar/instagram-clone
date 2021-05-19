@@ -5,7 +5,6 @@ import img4 from '../components/images/4.gif';
 import img5 from '../components/images/4.jpg';
 import img6 from '../components/images/5.gif';
 import img7 from '../components/images/6.gif';
-import img8 from '../components/images/logo192.png';
 import img9 from '../components/images/profile.jpg';
 
 export const data = [
@@ -114,22 +113,6 @@ export const data = [
             {
                 user:"Eldora",
                 msg : "hard work at times that are flattering"
-            }
-        ]
-    },
-    {
-        username : 'ChakrI__U',
-        imgUrl : img8,
-        caption : "Hello guys,Let's learn React today. 🚀",
-        likes : 925,
-        comments : [
-            {
-                user:"Ayden_Hickle",
-                msg : "Truth be its"
-            },
-            {
-                user:"Carissa.Krajcik",
-                msg : "Blessed are more accepted as a regular whole-pleasing"
             }
         ]
     },
