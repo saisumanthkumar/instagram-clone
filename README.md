@@ -1,6 +1,6 @@
 # INSTAGRAM - CLONE with React 🥳
 
-### 🎉🎉🎉 Deployed site is <a href="https://saisumanthkumar.github.io/insta-clone/">HERE</a> 🎉🎉🎉
+### 🎉🎉🎉 Deployed site is <a href="https://saisumanthkumar.github.io/instagram-clone/">HERE</a> 🎉🎉🎉
 
 This app contais some of the features similar to instagram 😎
 
