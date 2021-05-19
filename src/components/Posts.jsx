@@ -8,6 +8,7 @@ import {GrSend} from 'react-icons/gr';
 import {FiSave} from 'react-icons/fi';
 import {BsThreeDots} from 'react-icons/bs';
 import {HiOutlineEmojiHappy} from 'react-icons/hi';
+import { data } from '../data/Data';
 
 function Posts({item}) {
     const [clicks, setclicks] = useState(0);
@@ -83,7 +84,7 @@ function Posts({item}) {
             {moreOptions && <div className="bg-more">
                 <div className="more">
                 <button>Report</button>
-                <button><a href={img} download>Download</a></button>
+                <button><a href={item.imgUrl} download>Download</a></button>
                 <button>Copy Link</button>
                 <button onClick={() => setmoreOptions(false)}>Close</button>
                 </div>
