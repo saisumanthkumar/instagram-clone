@@ -8,6 +8,30 @@ import  {data}  from './data/Data';
 import { useState } from 'react';
 function App() {
   const [addpPost, setaddpPost] = useState(false);
+  const [currentImg, setcurrentImg] = useState('')
+  const [Caption, setCaption] = useState('')
+  const [updateddata, setupdateddata] = useState(data)
+
+  const handleImg =(e)=>{
+    setcurrentImg(URL.createObjectURL(e.target.files[0]))
+  }
+
+  const handlePost=()=>{
+    if(Caption && currentImg){
+      const post = {
+        username : 'Sai_sumanth_951',
+        imgUrl : currentImg,
+        caption : Caption,
+        likes : 0,
+        comments : []
+      }
+      setupdateddata([post,...updateddata])
+      setCaption('')
+      setcurrentImg('')
+      setaddpPost(false)
+    }
+  }
+
   return (
     <div className="App">
       <div className="main">
@@ -25,17 +49,17 @@ function App() {
           </div>
         </div>
       </div>
-      <Home data ={data}/>
+      <Home data ={updateddata}/>
       {addpPost && <div className="addPost">
         <div className="bg-Post">
         <div className="container">
           <h1>Add Post</h1>
           <div className="cross"><ImCross  onClick={() => {setaddpPost(!addpPost)}}/></div>
           
-          <input type="file" name="post" id="post" className="postdrop" title="hello"/>
+          <input type="file" name="post" id="post" className="postdrop" onChange={handleImg}/>
           
-          <input type="text" name="caption" id="caption" placeholder="write a caption..."/>
-          <button>Post</button>
+          <input type="text" name="caption" id="caption" placeholder="write a caption..." onChange={(e) => {setCaption(e.target.value)}}/>
+          <button onClick={handlePost}>Post</button>
         </div>
         </div>
       </div>}

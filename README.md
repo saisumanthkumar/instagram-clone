@@ -25,7 +25,7 @@ This app contais some of the features similar to instagram 😎
      - 🛠 Added anmation to more Options icon on the post(when clicked).👨‍🔧🔧⚙️🚀
      - 🛠 made responsive navbar.🔧
      - 🛠 Added Regular-Icons(home,messages.,etc) along with responsive.⚙️
-     - Added '+' (Add post button) with some animation.
+     - Added '+' (Add post button) with some animation && You can even add post locally in your Device.
 
 #### ```NOTE :-```
  - If you find any `BUGS`🐛🐛 please make a pull request.
