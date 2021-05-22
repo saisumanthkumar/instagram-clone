@@ -79,7 +79,7 @@ function App() {
           <Profile />
         </Route>
 
-        <Route path="/instagram-clone/*">
+        <Route path="*">
           <Error />
         </Route>
       </Switch>
