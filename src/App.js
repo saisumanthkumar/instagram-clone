@@ -52,30 +52,30 @@ function App() {
           <div className="gep"></div>
           <div className="more-icons">
             
-            <div className="single home"><Link to="/instagram-clone/"><BiHomeAlt /></Link></div>
-            <div className="single messages"><Link to="/instagram-clone/messages"><AiOutlineMessage /></Link></div>
+            <div className="single home"><Link to="/"><BiHomeAlt /></Link></div>
+            <div className="single messages"><Link to="/messages"><AiOutlineMessage /></Link></div>
             <div className="single addpost"  onClick={() => {setaddpPost(!addpPost)}}><CgAddR /></div>
-            <div className="single like"><Link to="/instagram-clone/activity"><AiOutlineHeart /></Link></div>
-            <div className="single profile"><Link to="/instagram-clone/profile"><CgProfile /></Link></div>   
+            <div className="single like"><Link to="/activity"><AiOutlineHeart /></Link></div>
+            <div className="single profile"><Link to="/profile"><CgProfile /></Link></div>   
             
           </div>
         </div>
       </div>
       {/* switching tabs */}
       <Switch>
-        <Route exact path="/instagram-clone/">
+        <Route exact path="/">
           <Home data ={updateddata}/>
         </Route>
 
-        <Route path="/instagram-clone/messages">
+        <Route path="/messages">
           <Messages />
         </Route>
 
-        <Route path="/instagram-clone/activity">
+        <Route path="/activity">
           <Activity />
         </Route>
 
-        <Route path="/instagram-clone/profile">
+        <Route path="/profile">
           <Profile />
         </Route>
 
