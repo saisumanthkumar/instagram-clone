@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/posts.css'
-import img from './images/profile.jpg'
 import { Avatar } from '@material-ui/core'
 import { AiOutlineLike } from 'react-icons/ai';
 import {FaRegComment} from 'react-icons/fa';

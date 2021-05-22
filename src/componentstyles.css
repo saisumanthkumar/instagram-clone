@@ -1,0 +1,47 @@
+.mainprofile {
+    position: relative;
+    top: 300px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.mainactivity {
+    position: relative;
+    top: 300px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.mainmessages {
+    position: relative;
+    top: 300px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.mainerror {
+    position: relative;
+    top: 200px;
+    margin: 0px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    font-family: 'Reggae One', cursive;
+}
+
+.emoji {
+    font-size: 100px;
+}
+
+.link {
+    width: 100px;
+    margin: 90px auto;
+    font-size: 20px;
+    padding: 8px 16px;
+    background-color: rgb(25, 133, 255);
+    border-radius: 3px;
+}
+
+.link a {
+    color: white;
+}

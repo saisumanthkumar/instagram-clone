@@ -1,4 +1,3 @@
-import Home from './components/Home';
 import './App.css';
 import {CgAddR,CgProfile} from 'react-icons/cg';
 import {AiOutlineMessage,AiOutlineHeart} from 'react-icons/ai';
@@ -6,6 +5,16 @@ import {BiHomeAlt} from 'react-icons/bi';
 import {ImCross} from 'react-icons/im';
 import  {data}  from './data/Data';
 import { useState } from 'react';
+import {BrowserRouter as Router,Route,Switch,Link} from 'react-router-dom'
+
+// all tabs components 
+import Home from './components/Home';
+import Messages from './components/Messages'
+import Activity from './components/Activity'
+import Profile from './components/Profile'
+import Error from './components/Error'
+// all tabs components 
+
 function App() {
   const [addpPost, setaddpPost] = useState(false);
   const [currentImg, setcurrentImg] = useState('')
@@ -34,6 +43,7 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
       <div className="main">
         <div className="navbar">
           <div className="icon">
@@ -41,15 +51,39 @@ function App() {
           </div>
           <div className="gep"></div>
           <div className="more-icons">
-            <div className="single home"><BiHomeAlt /></div>
-            <div className="single messages"><AiOutlineMessage /></div>
+            
+            <div className="single home"><Link to="/"><BiHomeAlt /></Link></div>
+            <div className="single messages"><Link to="/messages"><AiOutlineMessage /></Link></div>
             <div className="single addpost"  onClick={() => {setaddpPost(!addpPost)}}><CgAddR /></div>
-            <div className="single like"><AiOutlineHeart /></div>
-            <div className="single profile"><CgProfile /></div>   
+            <div className="single like"><Link to="/activity"><AiOutlineHeart /></Link></div>
+            <div className="single profile"><Link to="/profile"><CgProfile /></Link></div>   
+            
           </div>
         </div>
       </div>
-      <Home data ={updateddata}/>
+      {/* switching tabs */}
+      <Switch>
+        <Route exact path="/">
+          <Home data ={updateddata}/>
+        </Route>
+
+        <Route path="/messages">
+          <Messages />
+        </Route>
+
+        <Route path="/activity">
+          <Activity />
+        </Route>
+
+        <Route path="/profile">
+          <Profile />
+        </Route>
+
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+      {/* switching tabs */}
       {addpPost && <div className="addPost">
         <div className="bg-Post">
         <div className="container">
@@ -63,7 +97,7 @@ function App() {
         </div>
         </div>
       </div>}
-
+      </Router>
     </div>
   );
 }
